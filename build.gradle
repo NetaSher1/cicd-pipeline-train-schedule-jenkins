@@ -1,8 +1,10 @@
 plugins {
-  //inlude the nodeJS plugin to execute nodejs and npm tasks
-  id "com.moowork.node" version "1.4.1"
+    id 'com.moowork.node' version '1.4.1'
 }
 
+repositories {
+    mavenCentral()
+}
 node {
 	download = true
 	version = "9.11.1"
