@@ -34,14 +34,7 @@ task zip(type: Zip) {
 build.dependsOn(zip)
 zip.dependsOn(npm_build)
 npm_build.dependsOn(npm_test)
-npm_test.dependsOn(npmInstall)
-
-// Add an empty npmInstall task to break the cycle
-task npmInstall {
-    // Empty task
-}
 
 // Ensure npmInstall runs before npm_build and npm_test
 npm_build.dependsOn(npmInstall)
 npm_test.dependsOn(npmInstall)
-
